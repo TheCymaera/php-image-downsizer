@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+</head>
+<body>
+	<h2>PNG</h2>
+
+	<wrapping-grid>
+		<img src="../image-downsizer/?url=/tests/test1.png&width=100" />
+		<img src="../image-downsizer/?url=/tests/test1.png&width=200" />
+		<img src="../image-downsizer/?url=/tests/test1.png&width=500" />
+		<img src="../image-downsizer/?url=/tests/test1.png&width=2000" />
+	</wrapping-grid>
+
+	<wrapping-grid>
+		<img src="../image-downsizer/?url=/tests/test2.png&width=100" />
+		<img src="../image-downsizer/?url=/tests/test2.png&width=200" />
+		<img src="../image-downsizer/?url=/tests/test2.png&width=500" />
+		<img src="../image-downsizer/?url=/tests/test2.png&width=2000" />
+	</wrapping-grid>
+
+	<h2>JPEG</h2>
+	<wrapping-grid>
+		<img src="../image-downsizer/?url=/tests/test1.jpg&width=100" />
+		<img src="../image-downsizer/?url=/tests/test1.jpg&width=200" />
+		<img src="../image-downsizer/?url=/tests/test1.jpg&width=500" />
+		<img src="../image-downsizer/?url=/tests/test1.jpg&width=2000" />
+	</wrapping-grid>
+
+	<wrapping-grid>
+		<img src="../image-downsizer/?url=/tests/test2.jpg&width=100" />
+		<img src="../image-downsizer/?url=/tests/test2.jpg&width=200" />
+		<img src="../image-downsizer/?url=/tests/test2.jpg&width=500" />
+		<img src="../image-downsizer/?url=/tests/test2.jpg&width=2000" />
+	</wrapping-grid>
+
+	<style>
+		body {
+			margin: auto;
+			max-width: 900px;
+			padding: 0 .5em;
+		}
+
+		wrapping-grid {
+			--min-column-width: 200px;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-column-width)), 1fr));
+
+			grid-gap: .5em;
+			margin-bottom: .5em;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</body>
+</html>
